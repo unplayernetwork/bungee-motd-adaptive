@@ -64,18 +64,18 @@ public class PingListener implements Listener {
         String motdModern = config.getString("motd.modern", "&#FF6600&l¡Bienvenido al servidor! &#00FF66&lRGB Edition");
         
         // Obtener valores de protocolo desde la configuración
-        int legacyMax = config.getInt("protocols.legacy_max", 47);
+        int legacyMax = config.getInt("protocols.legacy_max", 736);
         
         // Determinar qué MOTD usar según la versión del protocolo
         String motdToUse;
         String versionInfo;
         
-        if (protocol <= legacyMax) { // 1.8.x y anteriores
+        if (protocol <= legacyMax) { // 1.8.x hasta 1.16.4
             motdToUse = motdLegacy;
-            versionInfo = "Cliente 1.8 detectado, usando MOTD sin RGB";
-        } else { // 1.9+ (todas las versiones modernas)
+            versionInfo = "Cliente 1.8.x-1.16.4 detectado, usando MOTD sin RGB";
+        } else { // 1.16.5+ (todas las versiones modernas con RGB)
             motdToUse = motdModern;
-            versionInfo = "Cliente 1.9+ detectado, usando MOTD con RGB";
+            versionInfo = "Cliente 1.16.5+ detectado, usando MOTD con RGB";
         }
         
         if (config.getBoolean("logging.debug", true)) {
