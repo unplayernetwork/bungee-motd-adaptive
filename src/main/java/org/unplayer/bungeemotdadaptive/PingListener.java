@@ -55,37 +55,39 @@ public class PingListener implements Listener {
             plugin.getLogger().info("Ping desde cliente con protocolo: " + protocol);
         }
         
-        // Obtener el MOTD actual
-        ServerPing ping = event.getResponse();
-        if (ping == null) return;
+        // Crear un nuevo ServerPing para cada jugador individual
+        ServerPing ping = new ServerPing();
         
         // Obtener MOTDs desde la configuración
-        String motdLegacy = config.getString("motd.legacy", "&6&l¡Bienvenido al servidor! &e&l1.8 Edition");
+        String motdLegacy = config.getString("motd.legacy", "&6&l¡Bienvenido al servidor! &e&l1.7-1.16.4 Edition");
         String motdModern = config.getString("motd.modern", "&#FF6600&l¡Bienvenido al servidor! &#00FF66&lRGB Edition");
         
         // Obtener valores de protocolo desde la configuración
         int legacyMax = config.getInt("protocols.legacy_max", 736);
         
-        // Determinar qué MOTD usar según la versión del protocolo
+        // Determinar qué MOTD usar según la versión del protocolo del jugador específico
         String motdToUse;
         String versionInfo;
         
-        if (protocol <= legacyMax) { // 1.8.x hasta 1.16.4
+        if (protocol <= legacyMax) { // 1.7.x hasta 1.16.4
             motdToUse = motdLegacy;
-            versionInfo = "Cliente 1.8.x-1.16.4 detectado, usando MOTD sin RGB";
+            versionInfo = "Cliente 1.7.x-1.16.4 detectado, usando MOTD sin RGB";
         } else { // 1.16.5+ (todas las versiones modernas con RGB)
             motdToUse = motdModern;
             versionInfo = "Cliente 1.16.5+ detectado, usando MOTD con RGB";
         }
         
         if (config.getBoolean("logging.debug", true)) {
-            plugin.getLogger().info(versionInfo);
+            plugin.getLogger().info(versionInfo + " - Protocolo: " + protocol);
         }
         
         // Aplicar colores usando la clase CC
         String coloredMotd = CC.color(motdToUse);
         
-        // Aplicar el MOTD
+        // Establecer el MOTD individual para este jugador específico
         ping.setDescription(coloredMotd);
+        
+        // Aplicar el ping personalizado al evento
+        event.setResponse(ping);
     }
 }

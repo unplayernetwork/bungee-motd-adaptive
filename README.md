@@ -4,18 +4,19 @@ Plugin de BungeeCord que detecta automáticamente la versión del cliente Minecr
 
 ## ✨ Características
 
-- **🔄 Detección Automática**: Detecta automáticamente la versión del cliente Minecraft
-- **🎨 MOTDs Adaptativos**: Muestra diferentes MOTDs según la versión del cliente
+- **🔄 Detección Automática Individual**: Detecta automáticamente la versión del cliente Minecraft para cada jugador
+- **🎨 MOTDs Adaptativos Personalizados**: Muestra diferentes MOTDs según la versión específica de cada cliente
 - **🌈 Colores RGB**: Soporte completo para colores RGB en versiones modernas (1.16.5+)
-- **⚡ Compatibilidad Legacy**: MOTDs tradicionales para clientes 1.8.x hasta 1.16.4
+- **⚡ Compatibilidad Legacy**: MOTDs tradicionales para clientes 1.7.x hasta 1.16.4
+- **👤 Experiencia Individual**: Cada jugador ve un MOTD optimizado para su versión
 - **📝 Configuración Flexible**: Archivo de configuración YAML personalizable
 - **🔧 Logging Avanzado**: Sistema de logging robusto y configurable
 
 ## 🖼️ Ejemplos Visuales
 
-### MOTD para Clientes Legacy (1.8.x - 1.16.4)
+### MOTD para Clientes Legacy (1.7.x - 1.16.4)
 ![MOTD Legacy](norgb.png)
-*Clientes 1.8.x hasta 1.16.4 ven colores básicos sin soporte RGB*
+*Clientes 1.7.x hasta 1.16.4 ven colores básicos sin soporte RGB*
 
 ### MOTD para Clientes Modernos (1.16.5+)
 ![MOTD Moderno](rgb.png)
@@ -41,7 +42,7 @@ El plugin crea automáticamente un archivo `config.yml` en la carpeta de datos d
 ```yaml
 # Configuración de MOTDs
 motd:
-  legacy: "&6&l¡Bienvenido al servidor! &e&l1.8-1.16.4 Edition"
+  legacy: "&6&l¡Bienvenido al servidor! &e&l1.7-1.16.4 Edition"
   modern: "&#FF6600&l¡Bienvenido al servidor! &#00FF66&lRGB Edition"
 
 # Configuración de protocolos
@@ -87,14 +88,16 @@ logging:
 
 ## 🔍 Cómo Funciona
 
-### Detección de Versión
-El plugin detecta la versión del cliente a través del protocolo de red:
-- **Protocolo ≤ 736**: Cliente 1.8.x hasta 1.16.4 (MOTD sin RGB)
+### Detección de Versión Individual
+El plugin detecta la versión del cliente a través del protocolo de red y **cada jugador recibe un MOTD personalizado**:
+- **Protocolo ≤ 736**: Cliente 1.7.x hasta 1.16.4 (MOTD sin RGB)
 - **Protocolo > 736**: Cliente 1.16.5+ (MOTD con RGB)
 
-### MOTDs Adaptativos
-- **Clientes Legacy (1.8.x - 1.16.4)**: Reciben MOTDs con colores básicos y efectos
+### MOTDs Adaptativos Individuales
+- **Cada jugador** recibe un MOTD específico según su versión de cliente
+- **Clientes Legacy (1.7.x - 1.16.4)**: Reciben MOTDs con colores básicos y efectos
 - **Clientes Modernos (1.16.5+)**: Reciben MOTDs con colores RGB completos
+- **Experiencia personalizada** - No hay MOTDs compartidos entre versiones
 
 ## 📊 Comandos
 
