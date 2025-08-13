@@ -1,0 +1,44 @@
+# Configuración del plugin Bungee MOTD Adaptive
+# Este archivo permite personalizar los mensajes del MOTD según la versión del cliente
+
+motd:
+  # MOTD para clientes 1.8.x y anteriores (sin colores RGB)
+  # Usa códigos de color tradicionales: &6, &e, &l, etc.
+  legacy: "&6&l¡Bienvenido al servidor! &e&l1.8 Edition"
+  
+  # MOTD para clientes 1.9+ (con colores RGB)
+  # Usa códigos hexadecimales: &#RRGGBB (ej: &#FF6600 para naranja)
+  modern: "&#FF6600&l¡Bienvenido al servidor! &#00FF66&lRGB Edition"
+
+# Configuración de versiones de protocolo
+protocols:
+  # Protocolo máximo para clientes 1.8.x
+  legacy_max: 47
+  
+  # Protocolo mínimo para clientes 1.9+
+  modern_min: 735
+  
+  # Protocolo para clientes 1.16.5
+  # 1.16.5 = 735, 1.17.x = 755+, 1.18.x = 757+, 1.19.x = 759+, 1.20.x = 760+
+
+# Configuración de logging
+logging:
+  # Mostrar información de debug en consola
+  debug: true
+  
+  # Mostrar información de versión detectada
+  show_version_info: true
+
+# Ejemplos de colores disponibles:
+# 
+# Colores tradicionales (funcionan en todas las versiones):
+# &0 = Negro, &1 = Azul oscuro, &2 = Verde oscuro, &3 = Azul verdoso
+# &4 = Rojo oscuro, &5 = Púrpura, &6 = Dorado, &7 = Gris
+# &8 = Gris oscuro, &9 = Azul, &a = Verde, &b = Azul verdoso claro
+# &c = Rojo, &d = Rosa, &e = Amarillo, &f = Blanco
+# &l = Negrita, &n = Subrayado, &o = Cursiva, &m = Tachado
+# 
+# Colores hexadecimales (solo 1.9+):
+# &#FF6600 = Naranja, &#00FF66 = Verde brillante, &#0066FF = Azul
+# &#FF0066 = Rosa, &#6600FF = Púrpura, &#FFFF00 = Amarillo
+# &#FF0000 = Rojo, &#00FF00 = Verde, &#0000FF = Azul

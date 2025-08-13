@@ -1,0 +1,55 @@
+# Ejemplos de MOTDs para el plugin Bungee MOTD Adaptive
+# Copia y pega estos ejemplos en tu config.yml
+
+# MOTDs para clientes 1.8.x (colores tradicionales)
+motd_legacy_examples:
+  # MOTD simple con colores básicos
+  simple: "&6&l¡Bienvenido! &e&lServidor 1.8"
+  
+  # MOTD con efectos de formato
+  fancy: "&c&l&n¡BIENVENIDO! &r&a&oAl mejor servidor &6&l1.8"
+  
+  # MOTD con gradiente simulado (usando colores similares)
+  gradient_like: "&c&l¡Bienvenido! &6&lAl &e&lServidor &a&l1.8 &b&lEdition"
+
+# MOTDs para clientes 1.9+ (con colores RGB)
+motd_modern_examples:
+  # MOTD con colores hexadecimales básicos
+  hex_basic: "&#FF6600&l¡Bienvenido! &#00FF66&lServidor RGB"
+  
+  # MOTD con gradiente de colores
+  gradient: "&#FF0000&l¡Bienvenido! &#FF6600&lAl &#FFFF00&lServidor &#00FF00&lRGB &#0066FF&lEdition"
+  
+  # MOTD con colores vibrantes
+  vibrant: "&#FF0066&l¡Bienvenido! &#6600FF&lAl &#00FFFF&lServidor &#FF6600&lModerno"
+  
+  # MOTD con colores neón
+  neon: "&#00FFFF&l¡BIENVENIDO! &#FF00FF&lAL &#FFFF00&lSERVIDOR &#00FF00&lNEÓN"
+
+# Ejemplos de combinaciones especiales
+special_examples:
+  # MOTD con emojis y colores
+  emoji: "&6&l🎮 &e&l¡Bienvenido! &a&l🎯 &b&lAl Servidor &d&l🌟"
+  
+  # MOTD con gradiente personalizado
+  custom_gradient: "&#FF0000&l¡Bienvenido! &#FF6600&lAl &#FFFF00&lServidor &#00FF00&lRGB &#0066FF&lEdition"
+  
+  # MOTD con efectos mixtos
+  mixed_effects: "&l&#FF6600¡Bienvenido! &o&#00FF66Al Servidor &n&#0066FFRGB"
+
+# Códigos de color hexadecimales populares:
+hex_colors:
+  red: "&#FF0000"
+  orange: "&#FF6600"
+  yellow: "&#FFFF00"
+  green: "&#00FF00"
+  lime: "&#00FF66"
+  cyan: "&#00FFFF"
+  blue: "&#0066FF"
+  purple: "&#6600FF"
+  pink: "&#FF0066"
+  white: "&#FFFFFF"
+  black: "&#000000"
+  gold: "&#FFD700"
+  silver: "&#C0C0C0"
+  bronze: "&#CD7F32"

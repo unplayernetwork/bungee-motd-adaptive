@@ -1,0 +1,3 @@
+name: bungee-motd-adaptive
+version: '1.0-SNAPSHOT'
+main: org.unplayer.bungeemotdadaptive.BungeeMotdAdaptive
