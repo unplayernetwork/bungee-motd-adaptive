@@ -81,7 +81,12 @@ public class PingListener implements Listener {
         String motdToUse;
         String versionInfo;
         
-        if (protocol <= legacyMax) { // 1.7.x hasta 1.16.4
+        // Verificar si el protocolo es válido y conocido
+        if (protocol <= 0 || protocol > 1000) {
+            // Protocolo desconocido o inválido - usar MOTD legacy por defecto
+            motdToUse = motdLegacy;
+            versionInfo = "Cliente con protocolo desconocido (" + protocol + "), usando MOTD legacy por defecto";
+        } else if (protocol <= legacyMax) { // 1.7.x hasta 1.16.4
             motdToUse = motdLegacy;
             versionInfo = "Cliente 1.7.x-1.16.4 detectado, usando MOTD sin RGB";
         } else { // 1.16.5+ (todas las versiones modernas con RGB)
