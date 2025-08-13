@@ -55,8 +55,20 @@ public class PingListener implements Listener {
             plugin.getLogger().info("Ping desde cliente con protocolo: " + protocol);
         }
         
-        // Crear un nuevo ServerPing para cada jugador individual
+        // Obtener el ping original para mantener toda la información
+        ServerPing originalPing = event.getResponse();
+        if (originalPing == null) {
+            originalPing = new ServerPing();
+        }
+        
+        // Crear una copia del ping original para no modificar el original
         ServerPing ping = new ServerPing();
+        
+        // Copiar toda la información del ping original
+        ping.setVersion(originalPing.getVersion());
+        ping.setPlayers(originalPing.getPlayers());
+        ping.setDescription(originalPing.getDescription()); // Se sobrescribirá después
+        ping.setFavicon(originalPing.getFavicon());
         
         // Obtener MOTDs desde la configuración
         String motdLegacy = config.getString("motd.legacy", "&6&l¡Bienvenido al servidor! &e&l1.7-1.16.4 Edition");
